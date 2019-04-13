@@ -1,0 +1,15 @@
+.mainView {
+	-fx-background-color: #1D222C;
+	-fx-border-color: #000000, #3B3F48;
+	-fx-border-insets: 0, 1;
+	
+}
+
+.resizeDragButton {
+	-fx-background-image: url("../../img/buttons/resize.png");
+}
+
+.footer {
+	-fx-background-color: #243040;
+	-fx-border-color: #424854 transparent transparent transparent;
+}

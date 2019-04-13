@@ -1,0 +1,42 @@
+.text-field {
+	-fx-background-color: #13161D;
+	-fx-border-color: #383A44, #000000;
+	-fx-border-insets: 0, 1;
+	-fx-text-fill: #cccccc;
+	-fx-prompt-text-fill: #cccccc;
+	-fx-font-family: "Roboto";
+	-fx-font-size: 12pt;
+	-fx-background-radius: 3;
+	-fx-border-radius: 3;
+}
+
+.text-field:hover {
+	-fx-border-color: #494D55, #000000;
+	-fx-text-fill: #eeeeee;
+	-fx-prompt-text-fill: #eeeeee;
+}
+
+.text-field:focused {
+	-fx-background-color: #0E1116;
+	-fx-border-color: #1D5E98, #000000;
+	-fx-text-fill: #eeeeee;
+}
+
+.text-field-invalid {
+	-fx-border-color: #FF0000, #000000;
+	-fx-border-insets: 0, 1;
+}
+
+.text-field-invalid:hover {
+	-fx-border-color: #FF0000, #000000;
+	-fx-border-insets: 0, 1;
+}
+
+.text-field-invalid:focused {
+	-fx-border-color: #FF0000, #000000;
+	-fx-border-insets: 0, 1;
+}
+
+.password-field {
+	-fx-padding: 8 8 11 8;
+}

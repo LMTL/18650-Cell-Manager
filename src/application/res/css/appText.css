@@ -1,0 +1,54 @@
+.appText {	
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 11pt;
+	-fx-text-fill: #ffffff;	
+	-fx-fill: #ffffff;
+}
+
+.appTextBold {	
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 12pt;
+	-fx-font-weight: bold;
+	-fx-text-fill: #ffffff;	
+	-fx-fill: #ffffff;
+}
+
+.logoText {
+	-fx-font-family: "Roboto";
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 18pt;
+	-fx-text-fill: #ffffff;	
+	-fx-fill: #ffffff;
+}
+
+.linkText {
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-text-fill: #00aeff;
+	-fx-fill: #00aeff;
+	-fx-font-size: 12pt;
+}
+
+.tooltip {
+	-fx-cursor: default;
+    -fx-background-color: #272E3B;
+    -fx-border-insets: 0, 1;
+    -fx-border-color: #000000, #3C424E;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.75) , 10, 0, 0, 0);
+	-fx-font-family: "Roboto";
+	-fx-font-size: 11pt;
+	-fx-text-fill: #ffffff;
+}
+
+.errorMessageText {
+	-fx-fill: #00aeff;
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 12pt;
+}

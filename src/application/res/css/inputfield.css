@@ -1,0 +1,22 @@
+.inputfield {
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-background-color: #13161D;
+	-fx-border-color: #383A44;
+	-fx-text-fill: #bbbbbb;
+	-fx-prompt-text-fill: #bbbbbb;
+	-fx-font-size: 13pt;
+}
+
+.inputfield:hover {
+	-fx-text-fill: #eeeeee;
+	-fx-border-color: #474B54;
+	-fx-prompt-text-fill: #eeeeee;
+}
+
+.inputfield:focused {
+	-fx-background-color: #0E1116;
+	-fx-border-color: #1D5E98;
+	-fx-text-fill: #eeeeee;
+}

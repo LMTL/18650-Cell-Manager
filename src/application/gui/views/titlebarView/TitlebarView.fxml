@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="0.0" maxWidth="0.0" minHeight="25.0" minWidth="350.0" prefHeight="0.0" prefWidth="0.0" styleClass="titlebar" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.gui.views.titlebarView.TitlebarViewGUIController">
+<children><HBox fx:id="titlebarBGLabel" maxHeight="0.0" maxWidth="0.0" minHeight="70.0" prefHeight="0.0" prefWidth="0.0" styleClass="titlebar_bg" visible="false" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="-1.0">
+<effect>
+<DropShadow color="#000000e5" height="27.0" radius="13.0" width="27.0" />
+</effect></HBox><AnchorPane fx:id="titlebar" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<children><HBox fx:id="titlebarButtonLabel" alignment="CENTER_RIGHT" maxHeight="0.0" maxWidth="0.0" minHeight="25.0" prefHeight="0.0" prefWidth="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<children><Button fx:id="toTaskbarButton" focusTraversable="false" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" prefHeight="0.0" prefWidth="0.0" styleClass="toTaskbarButton" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="3.0">
+<HBox.margin>
+<Insets bottom="6.0" right="4.0" />
+</HBox.margin></Button><Button fx:id="maximizeButton" focusTraversable="false" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" prefHeight="0.0" prefWidth="0.0" styleClass="maxButton" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="3.0">
+<HBox.margin>
+<Insets bottom="5.0" right="4.0" />
+</HBox.margin></Button><Button fx:id="closeButton" focusTraversable="false" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" prefHeight="0.0" prefWidth="0.0" styleClass="closeButton" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="6.0">
+<HBox.margin>
+<Insets right="7.0" />
+</HBox.margin></Button>
+</children></HBox><AnchorPane fx:id="dekoLabel" maxHeight="0.0" maxWidth="0.0" minHeight="25.0" prefHeight="0.0" prefWidth="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="1.0">
+<children><HBox maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="50.0" prefHeight="0.0" prefWidth="0.0" styleClass="titlebarBG_left" AnchorPane.leftAnchor="0.0" /><HBox maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="125.0" prefHeight="0.0" prefWidth="0.0" styleClass="titlebarBG_center" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" /><HBox maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="50.0" prefHeight="0.0" prefWidth="0.0" styleClass="titlebarBG_right" AnchorPane.rightAnchor="0.0" />
+</children></AnchorPane><Button fx:id="minimizeButton" focusTraversable="false" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" prefHeight="0.0" prefWidth="0.0" styleClass="minButton" visible="false" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="4.0" /><HBox fx:id="headerButtonLabel" maxHeight="0.0" maxWidth="0.0" minHeight="50.0" prefHeight="0.0" prefWidth="0.0" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="15.0">
+<children><VBox prefHeight="200.0" prefWidth="100.0">
+<children><HBox maxHeight="0.0" maxWidth="0.0" minHeight="25.0" minWidth="25.0" prefHeight="0.0" prefWidth="0.0" styleClass="appHeaderLogo">
+<HBox.margin>
+<Insets left="10.0" right="5.0" top="10.0" />
+</HBox.margin>
+<VBox.margin>
+<Insets bottom="5.0" left="27.0" />
+</VBox.margin></HBox><Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appLogoText" text="AzubiStatistik">
+<HBox.margin>
+<Insets top="15.0" />
+</HBox.margin>
+<VBox.margin>
+<Insets top="1.0" />
+</VBox.margin></Text>
+</children>
+<HBox.margin>
+<Insets left="20.0" />
+</HBox.margin></VBox>
+</children></HBox>
+</children></AnchorPane>
+</children>
+</AnchorPane>

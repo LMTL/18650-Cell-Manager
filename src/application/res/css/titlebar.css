@@ -1,0 +1,99 @@
+.titlebar {
+	-fx-background-color: transparent;
+}
+
+.titlebar_bg {
+	-fx-background-color: radial-gradient(focus-distance 0% , center 50% 0% , radius 150%, #202633, #2E3C53);	
+	-fx-background-color: #243040;	
+	-fx-background-color: linear-gradient(to bottom, #202633 0%, #243040 90%);
+	-fx-border-color: transparent transparent #434750 transparent;
+		-fx-border-color: #000000, #3B3F48;
+	-fx-border-insets: 0, 1;
+}
+
+.titlebarBG_left {
+	-fx-background-image: url("../img/labels/titlebarBG_left.png");
+	-fx-background-repeat: no-repeat;
+	-fx-opacity: 0.9;
+}
+
+.titlebarBG_center {
+	-fx-background-image: url("../img/labels/titlebarBG_center.png");
+	-fx-background-repeat: repeat-x;
+	-fx-opacity: 0.9;
+}
+
+.titlebarBG_right {
+	-fx-background-image: url("../img/labels/titlebarBG_right.png");
+	-fx-background-repeat: no-repeat;
+	-fx-opacity: 0.9;
+}
+
+.closeButton {
+	-fx-background-color: transparent;
+	-fx-background-image: url("../img/buttons/close_0.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+}
+
+.closeButton:hover {
+	-fx-background-color: transparent;
+	-fx-background-image: url("../img/buttons/close_1.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	-fx-cursor: hand;
+}
+
+.closeButton:pressed {
+	-fx-background-color: transparent;
+	-fx-background-image: url("../img/buttons/close_0.png");
+	-fx-background-repeat: no-repeat;
+}
+
+.toTaskbarButton {
+	-fx-background-color: transparent;
+	-fx-background-image: url("../img/buttons/toTaskbar_0.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: bottom;
+}
+
+.toTaskbarButton:hover {
+	-fx-background-image: url("../img/buttons/toTaskbar_1.png");
+	-fx-cursor: hand;
+}
+
+.toTaskbarButton:pressed {
+	-fx-background-image: url("../img/buttons/toTaskbar_0.png");
+}
+
+.minButton {
+	-fx-background-color: transparent;
+	-fx-background-image: url("../img/buttons/minimize_0.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: bottom;
+}
+
+.minButton:hover {
+	-fx-background-image: url("../img/buttons/minimize_1.png");
+	-fx-cursor: hand;
+}
+
+.minButton:pressed {
+	-fx-background-image: url("../img/buttons/minimize_0.png");
+}
+
+.maxButton {
+	-fx-background-color: transparent;
+	-fx-background-image: url("../img/buttons/maximize_0.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: bottom;
+}
+
+.maxButton:hover {
+	-fx-background-image: url("../img/buttons/maximize_1.png");
+	-fx-cursor: hand;
+}
+
+.maxButton:pressed {
+	-fx-background-image: url("../img/buttons/maximize_0.png");
+}

@@ -1,0 +1,33 @@
+.check-box {
+	-fx-font-size: 11pt;
+	-fx-text-fill: #cccccc;
+	-fx-font-family: "Roboto";
+	
+}
+
+.check-box:hover {
+	-fx-text-fill: #eeeeee;
+}
+
+.check-box > .box {
+  	-fx-background-radius: 2;
+  	-fx-border-radius: 2;
+	-fx-background-color: #13161D;
+	-fx-border-color: #3F434B;	
+}
+
+.check-box:hover > .box {
+  	-fx-border-color: #565961;  	
+}
+
+.check-box > .box > .mark {
+	  -fx-background-position: bottom;
+	  -fx-background-repeat: no-repeat;
+	  -fx-shape: none;
+	  -fx-background-color: transparent;
+	  -fx-padding: 5.5 5.5;
+}
+
+.check-box:selected > .box{
+	  -fx-background-image: url("../../img/buttons/checkbox_ok.png");	
+}

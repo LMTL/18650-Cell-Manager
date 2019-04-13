@@ -1,0 +1,74 @@
+.combo-box {
+	-fx-background-color: #13161D;	
+	-fx-border-color: #3B404A, #000000;
+	-fx-border-insets: 0, 1;
+	-fx-background-radius: 3;
+	-fx-border-radius: 3;
+	-fx-text-fill: #cccccc;
+	-fx-font-family: "Roboto";
+	-fx-font-size: 12pt;
+}
+
+.combo-box:hover {
+	-fx-border-color: #494D55, #000000;
+	-fx-border-insets: 0, 1;
+	-fx-text-fill: #eeeeee;
+}
+
+.combo-box .list-cell {
+	-fx-border-color: transparent;
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+    -fx-font-family: "Roboto";
+	-fx-font-size: 12pt;
+	-fx-text-fill: #cccccc;
+    -fx-padding: 1 4 3 4; /* 4 8 4 8 */
+}
+
+ .combo-box-popup .list-view {
+    -fx-background-color: #272E3B;
+    -fx-border-insets: 0, 1;
+    -fx-border-color: #000000, #3C424E;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+} 
+
+.combo-box-popup .list-view .list-cell {
+   -fx-padding: 5 0 5 20;
+	-fx-background-color: #272E3B;
+	-fx-text-fill: #ffffff;
+	-fx-font-family: "Roboto";
+	-fx-font-size: 12pt;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+	-fx-text-fill: #00aeff;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+	-fx-background-image: url("../../res/img/buttons/dot.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: left center;
+	-fx-font-family: "Roboto";
+	-fx-font-size: 12pt;
+}
+
+.combo-box-base {
+    -fx-background-radius: 2;
+  	-fx-border-radius: 2;
+	-fx-background-color: #13161D;
+	-fx-border-color: #3F434B;
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+}
+
+.combo-box-base:hover {
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+	-fx-border-color: #565961; 
+}
+
+.combo-box .arrow {
+	-fx-background-color: #3077B7;
+	-fx-background-color: linear-gradient(to bottom, #01A0DA 0%, #0D68B1 100%);
+	-fx-padding: 4 6;
+}

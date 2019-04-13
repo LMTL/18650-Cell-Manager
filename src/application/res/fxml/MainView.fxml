@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="appBG" minHeight="600.0" minWidth="800.0" styleClass="mainView" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.views.mainView.MainViewGUIController">
+<children><HBox fx:id="footer" alignment="CENTER_LEFT" maxHeight="0.0" maxWidth="0.0" minHeight="45.0" prefHeight="0.0" prefWidth="0.0" styleClass="footer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="0.0" /><HBox fx:id="resizeDragButton" maxHeight="0.0" maxWidth="0.0" minHeight="11.0" minWidth="11.0" prefHeight="0.0" prefWidth="0.0" styleClass="resizeDragButton" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+</children></AnchorPane>

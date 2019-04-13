@@ -1,0 +1,63 @@
+.mainMenubar {
+	-fx-background-color: rgba(0, 0, 0, 0.4);	
+	-fx-border-color: transparent #383C45 transparent transparent;
+}
+
+.mainMenuButton {
+	-fx-background-color: transparent;
+	-fx-opacity: 0.35;
+		-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 10.5pt;
+	-fx-text-fill: #dddddd;	
+	-fx-fill: #dddddd;
+}
+
+.mainMenuButton:hover {
+	-fx-background-color: rgba(35, 35, 35, 0.5);
+	-fx-border-color: #454545;
+	-fx-opacity: 1.0;
+}
+
+.mainMenuButton:pressed {
+	-fx-background-color: rgba(55, 85, 115, 0.3);
+	-fx-border-color: #1D629D;
+	-fx-opacity: 1.0;
+}
+
+.mainMenuButtonActive {
+	-fx-background-color: rgba(55, 85, 115, 0.4);
+	-fx-border-color: #1D629D;
+	-fx-opacity: 1.0;
+		-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 10.5pt;
+	-fx-text-fill: #fefefe;	
+	-fx-fill: #fefefe;
+}
+
+.importTabButton {
+	-fx-padding: 50 0 0 0;
+}
+
+.exportTabButton {
+	-fx-padding: 50 0 0 0;
+}
+
+.optionsTabButton {
+	-fx-padding: 50 0 0 0;
+}
+
+.importTabButtonActive {
+	-fx-padding: 50 0 0 0;
+}
+
+.exportTabButtonActive {
+	-fx-padding: 50 0 0 0;
+}
+
+.optionsTabButtonActive {
+	-fx-padding: 50 0 0 0;
+}

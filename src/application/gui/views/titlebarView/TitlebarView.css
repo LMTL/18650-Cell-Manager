@@ -1,0 +1,14 @@
+@import "../../res/css/titlebar.css";
+
+.appHeaderLogo {
+	-fx-background-image: url("../../res/img/logo_25x25.png");
+}
+
+.appLogoText {	
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 10pt;
+	-fx-text-fill: #ffffff;	
+	-fx-fill: #ffffff;
+}

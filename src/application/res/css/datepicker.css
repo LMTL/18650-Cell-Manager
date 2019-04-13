@@ -1,0 +1,19 @@
+.date-picker {
+	-fx-background-color: transparent;
+}
+
+.date-picker > .text-field {
+    -fx-padding: 0 3 2 4;
+    -fx-border-color: #3B404A, #000000;
+}
+
+
+.date-picker-invalid > .text-field {
+    -fx-border-color: #FF0000, #000000;
+    -fx-border-insets: 0, 1;
+}
+
+.date-picker > .text-field:focused {
+    	-fx-border-color: #3B404A, #000000;
+	-fx-border-insets: 0, 1;
+}

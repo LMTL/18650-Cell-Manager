@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="0.0" maxWidth="0.0" minHeight="600.0" minWidth="111.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.views.menubarView.MenubarViewGUIController">
+<children><VBox maxHeight="0.0" maxWidth="0.0" minWidth="111.0" prefHeight="0.0" prefWidth="0.0" styleClass="mainMenubar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<children><Button fx:id="importButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,importTabButtonActive" text="Import">
+<VBox.margin>
+<Insets bottom="5.0" />
+</VBox.margin>
+<effect>
+<DropShadow />
+</effect></Button><Button fx:id="statistikButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,exportTabButton" text="Database">
+<VBox.margin>
+<Insets bottom="5.0" />
+</VBox.margin>
+<effect>
+<DropShadow />
+</effect></Button><Button fx:id="optionButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,optionsTabButton" text="Options">
+<effect>
+<DropShadow />
+</effect></Button>
+</children>
+<padding>
+<Insets bottom="5.0" left="4.0" right="5.0" top="3.0" />
+</padding>
+</VBox>
+</children></AnchorPane>

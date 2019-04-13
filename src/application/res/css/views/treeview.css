@@ -1,0 +1,102 @@
+.tree-view-header {
+	-fx-background-color: #222A37;
+	-fx-border-insets: 0, 1;
+    -fx-border-color: #4C5362, #000000;    
+	-fx-text-fill: #ffffff;
+}
+
+.treeViewEntry {
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-size: 11pt;
+	-fx-text-fill: #ffffff;	
+	-fx-fill: #ffffff;
+	-fx-font-smoothing-type: lcd;
+	-fx-border-insets: 0, 1;
+	-fx-border-color: transparent, transparent;
+}
+
+.tree-view {
+	-fx-background-color: transparent;
+	-fx-background-color: rgba(0, 0, 0, 0.4);	
+	-fx-padding: 0 -1 -1 -1;
+	-fx-border-color: transparent transparent transparent #383C45;
+}
+
+.tree-cell {
+	-fx-background-color: transparent;
+	-fx-padding: 3 15 3 5;
+	-fx-border-insets: 0, 1;
+    -fx-border-color: transparent, transparent;
+	-fx-font-family: "Roboto";
+	-fx-font-size: 11pt;
+	-fx-text-fill: #dddddd;
+}
+
+.tree-cell:filled {
+	-fx-background-color: transparent;
+	-fx-padding: 3 15 3 5;
+	-fx-border-insets: 0, 1;
+    -fx-border-color: transparent, transparent;
+
+	-fx-font-family: "Roboto";
+	-fx-font-size: 11pt;
+	-fx-text-fill: #dddddd;
+	-fx-border-insets: 0, 1;
+}
+
+.tree-cell:empty:selected {
+	-fx-background-color: transparent;
+}
+
+.tree-cell:empty:hover {
+	-fx-background-color: transparent;
+}
+
+.tree-cell:filled:selected {
+	-fx-background-color: #222A37;
+	-fx-border-insets: 0, 1;
+    -fx-border-color: #000000 transparent #000000 #3B3F48, #3C424E transparent #3C424E transparent;
+}
+
+.tree-cell:filled:hover {
+	-fx-background-color: #222A37;
+	-fx-border-insets: 0, 1;
+    -fx-border-color: #000000 transparent #000000 #3B3F48, #3C424E transparent #3C424E transparent;
+}
+
+.tree-view .scroll-bar:horizontal, .tree-view  .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: -1;
+}
+
+.tree-view .scroll-bar .thumb {
+    -fx-background-color: #3A3D44;
+}
+
+.tree-view .scroll-bar .thumb:hover {
+	-fx-background-color: #5E6167;
+}
+
+.tree-view .scroll-bar .thumb:pressed {
+	-fx-background-color: #464951;
+}
+.tree-view .increment-button, .tree-view .decrement-button {
+    -fx-background-color: transparent;
+	-fx-border-color: transparent;	
+}
+
+.tree-view  .scroll-bar .increment-arrow, .tree-view  .scroll-bar .decrement-arrow {
+	-fx-shape: " ";	
+	-fx-padding: 0;
+}
+
+.tree-view .scroll-bar:vertical .increment-button, .tree-view .scroll-bar:vertical .decrement-button {
+    -fx-background-color:transparent;
+	-fx-background-radius: 0em;
+	-fx-padding:0 10 0 0;
+}
+
+.tree-cell .tree-disclosure-node .arrow {
+    -fx-background-color: linear-gradient(#0F99D9 0.0%, #0177AF 100.0%);
+}

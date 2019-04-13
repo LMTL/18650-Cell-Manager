@@ -1,0 +1,91 @@
+.appButton {
+	-fx-background-color: linear-gradient(#0F99D9 0.0%, #0177AF 100.0%);
+	-fx-border-color: #60C8F7, #252525;
+	-fx-border-insets: 0, -1;
+	-fx-background-radius: 3;
+	-fx-border-radius: 3;
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 11pt;
+	-fx-text-fill: #ffffff;
+	-fx-padding: 3 20 3 20;
+}
+
+.appButton:hover {
+	-fx-background-color: linear-gradient(#35BEFE 0.0%, #0097DD 100.0%);
+	-fx-border-color: #bbbbbb, #202020;
+	-fx-border-insets: 0, -1;
+	-fx-background-radius: 3;
+	-fx-border-radius: 3;
+}
+
+.appButton:pressed {	
+	-fx-background-color: #0889C5;
+	-fx-border-color: #4C5F8B, #131313;
+	-fx-border-insets: 0, -1;
+	-fx-background-radius: 3;
+	-fx-border-radius: 3;
+}
+
+.appButton:disabled {
+	-fx-opacity: 0.25;
+}
+
+.radio-button {
+	-fx-text-fill: #cccccc;
+}
+
+.radio-button:hover {
+	-fx-text-fill: #eeeeee;
+}
+
+.radio-button .radio {
+    -fx-border-color: #3B404A, #000000;
+    -fx-border-width: 1;
+    -fx-border-insets: 0, 1;
+    -fx-background-color: #13161D;
+    -fx-border-radius: 45;
+    -fx-padding: 3 3;
+    
+}
+
+.radio-button:hover .radio {
+	-fx-border-color: #565961, #000000; 
+  	-fx-border-insets: 0, 1;
+}
+
+.radio-button .dot {
+	-fx-background-color: transparent;
+    -fx-background-radius: 15px;
+    -fx-padding: 4 4;
+}
+
+.radio-button:selected .dot {
+	-fx-background-color: transparent;
+	-fx-background-image: url("../img/buttons/radiobutton.png");
+	-fx-background-position: center;
+    -fx-background-radius: 15px;
+    -fx-padding: 4 4;
+}
+
+.settingsButton {
+    -fx-background-radius: 2;
+  	-fx-border-radius: 2;
+	-fx-background-color: #13161D;
+	-fx-border-color: #3F434B;
+	-fx-background-image: url("../../res/img/buttons/settings_0.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+}
+
+.settingsButton:hover {
+	-fx-background-image: url("../../res/img/buttons/settings_1.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+	-fx-border-color: #565961; 
+}
+
+.settingsButton .arrow {
+
+}

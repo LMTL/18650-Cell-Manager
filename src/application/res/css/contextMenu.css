@@ -1,0 +1,29 @@
+.context-menu {
+	-fx-cursor: default;
+    -fx-background-color: #272E3B;
+    -fx-border-insets: 0, 1;
+    -fx-border-color: #000000, #3C424E;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.75) , 10, 0, 0, 0);
+	-fx-font-family: "Roboto";
+	-fx-font-size: 12pt;
+	-fx-text-fill: #ffffff;
+}
+
+.menu-item {
+	-fx-cursor: default;
+    -fx-background-color: transparent;
+    -fx-text-fill: #cccccc;
+    -fx-padding: 5 15 5 15;   
+}
+
+.menu-item:focused {     
+     -fx-text-fill:  #ffffff;
+}
+
+.menu-item .label {
+    -fx-text-fill: #ffffff;
+}
+
+.menu-item:focused > .label {
+    -fx-text-fill: #00aeff;
+}

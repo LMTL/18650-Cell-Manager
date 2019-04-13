@@ -1,0 +1,20 @@
+.appHeaderLogo {
+	-fx-background-color: transparent;
+}
+
+.appHeaderLogo:hover {
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5) , 15, 0, 0, 0);
+}
+
+.appHeaderLogo:pressed {
+	-fx-effect: none;
+}
+
+.appLogoText {	
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 10pt;
+	-fx-text-fill: #ffffff;	
+	-fx-fill: #ffffff;
+}

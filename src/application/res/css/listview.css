@@ -1,0 +1,89 @@
+.list-view-header {
+	-fx-background-color: #222A37;
+	-fx-border-insets: 0, 1;
+    -fx-border-color: #4C5362, #000000;    
+	-fx-text-fill: #ffffff;
+}
+
+.listViewEntry {
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-size: 11pt;
+	-fx-text-fill: #ffffff;	
+	-fx-fill: #ffffff;
+	-fx-font-smoothing-type: lcd;
+	-fx-border-insets: 0, 1;
+	-fx-border-color: transparent, transparent;
+}
+
+.list-view {
+	-fx-background-color: transparent;
+	-fx-padding: 0 -1 -1 -1;
+	-fx-border-color: transparent transparent transparent #3B3F48;
+}
+
+.list-cell {
+	-fx-background-color: transparent;
+	-fx-padding: 3 15 3 15;
+	-fx-border-insets: 0, 1;
+    -fx-border-color: transparent, transparent;
+	-fx-font-family: "Roboto";
+	-fx-font-size: 11pt;
+	-fx-text-fill: #dddddd;
+}
+
+.list-cell:filled {
+	-fx-background-color: transparent;
+	-fx-padding: 3 15 3 15;
+	-fx-border-insets: 0, 1;
+    -fx-border-color: transparent, transparent;
+
+	-fx-font-family: "Roboto";
+	-fx-font-size: 11pt;
+	-fx-text-fill: #dddddd;
+	-fx-border-insets: 0, 1;
+}
+
+.list-cell:filled:selected {
+	-fx-background-color: #222A37;
+	-fx-border-insets: 0, 1;
+    -fx-border-color: #000000 transparent #000000 #3B3F48, #3C424E transparent #3C424E transparent;
+}
+
+.list-cell:filled:hover {
+	-fx-background-color: #222A37;
+	-fx-border-insets: 0, 1;
+    -fx-border-color: #000000 transparent #000000 #3B3F48, #3C424E transparent #3C424E transparent;
+}
+
+.list-view .scroll-bar:horizontal, .list-view  .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: -1;
+}
+
+.list-view .scroll-bar .thumb {
+    -fx-background-color: #3A3D44;
+}
+
+.list-view .scroll-bar .thumb:hover {
+	-fx-background-color: #5E6167;
+}
+
+.list-view .scroll-bar .thumb:pressed {
+	-fx-background-color: #464951;
+}
+.list-view .increment-button, .list-view .decrement-button {
+    -fx-background-color: transparent;
+	-fx-border-color: transparent;	
+}
+
+.list-view  .scroll-bar .increment-arrow, .list-view  .scroll-bar .decrement-arrow {
+	-fx-shape: " ";	
+	-fx-padding: 0;
+}
+
+.list-view .scroll-bar:vertical .increment-button, .list-view .scroll-bar:vertical .decrement-button {
+    -fx-background-color:transparent;
+	-fx-background-radius: 0em;
+	-fx-padding:0 10 0 0;
+}
