@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="530.0" minWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.views.databaseView.DatabaseViewGUIController">
+<children><HBox maxHeight="25.0" minHeight="25.0" prefHeight="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+<children><Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appText" text="#">
+<HBox.margin>
+<Insets left="16.0" />
+</HBox.margin></Text><Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appText" text="Brand">
+<HBox.margin>
+<Insets left="75.0" />
+</HBox.margin></Text><Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appText" text="Type">
+<HBox.margin>
+<Insets left="100.0" />
+</HBox.margin></Text><Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appText" text="Capacity">
+<HBox.margin>
+<Insets left="110.0" />
+</HBox.margin></Text><Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appText" text="Testdate">
+<HBox.margin>
+<Insets left="50.0" />
+</HBox.margin></Text><Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appText" text="Pack-ID">
+<HBox.margin>
+<Insets left="75.0" />
+</HBox.margin></Text>
+</children></HBox><AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<children><ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+</children></AnchorPane>
+</children></AnchorPane>

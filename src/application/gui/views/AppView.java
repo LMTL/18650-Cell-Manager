@@ -51,8 +51,6 @@ public abstract class AppView {
 
 			stylesheets.add(GUIConfig.DEFAULT_GUI_RES_URL + "css/views/" + appViewFileName  + ".css");
 			appScene.addView(this);
-			System.out.println(appViewFileName + " loaded.");
-
 		} catch (Exception e) {
 			System.out.println("could not initialize " + this.getClass().getName().substring(this.getClass().getName().lastIndexOf(".") + 1) + ".\n" + e.getMessage());
 			e.printStackTrace();

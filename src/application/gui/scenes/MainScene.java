@@ -1,5 +1,7 @@
 package application.gui.scenes;
 
+import application.gui.views.databaseView.DatabaseView;
+import application.gui.views.importView.ImportView;
 import application.gui.views.mainView.MainView;
 import application.gui.views.menubarView.MenubarView;
 import application.gui.views.titlebarView.TitlebarView;
@@ -10,6 +12,9 @@ public class MainScene extends AppScene {
 
 	public static MainView mainView;
 	public static TitlebarView titlebar;
+	public static ImportView importView;
+	public static DatabaseView databaseView;
+
 	private MenubarView menubar;
 
 	public MainScene(Stage window) {
@@ -22,7 +27,8 @@ public class MainScene extends AppScene {
 		mainView = new MainView(this);
 		menubar = new MenubarView(this);
 		titlebar = new TitlebarView(this);
-
+		importView = new ImportView(this);
+		databaseView = new DatabaseView(this);
 	}
 
 	@Override

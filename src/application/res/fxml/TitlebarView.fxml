@@ -14,10 +14,10 @@
 <children><HBox fx:id="titlebarButtonLabel" alignment="CENTER_RIGHT" maxHeight="0.0" maxWidth="0.0" minHeight="25.0" prefHeight="0.0" prefWidth="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 <children><Button fx:id="toTaskbarButton" focusTraversable="false" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" prefHeight="0.0" prefWidth="0.0" styleClass="toTaskbarButton" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="3.0">
 <HBox.margin>
-<Insets bottom="6.0" right="4.0" />
+<Insets bottom="6.0" right="10.0" />
 </HBox.margin></Button><Button fx:id="maximizeButton" focusTraversable="false" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" prefHeight="0.0" prefWidth="0.0" styleClass="maxButton" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="3.0">
 <HBox.margin>
-<Insets bottom="5.0" right="4.0" />
+<Insets bottom="5.0" right="10.0" />
 </HBox.margin></Button><Button fx:id="closeButton" focusTraversable="false" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" prefHeight="0.0" prefWidth="0.0" styleClass="closeButton" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="6.0">
 <HBox.margin>
 <Insets right="7.0" />
