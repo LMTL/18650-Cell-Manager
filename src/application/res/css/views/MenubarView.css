@@ -6,7 +6,7 @@
 .mainMenuButton {
 	-fx-background-color: transparent;
 	-fx-opacity: 0.35;
-		-fx-font-family: "Roboto";
+	-fx-font-family: "Roboto";
 	-fx-smooth: true;
 	-fx-font-smoothing-type: lcd;
 	-fx-font-size: 10.5pt;
@@ -30,7 +30,7 @@
 	-fx-background-color: rgba(55, 85, 115, 0.4);
 	-fx-border-color: #1D629D;
 	-fx-opacity: 1.0;
-		-fx-font-family: "Roboto";
+	-fx-font-family: "Roboto";
 	-fx-smooth: true;
 	-fx-font-smoothing-type: lcd;
 	-fx-font-size: 10.5pt;
@@ -53,8 +53,19 @@
 
 }
 
+.packsTabButton {
+	-fx-padding: 70 0 0 0;
+}
+
+.repackerTabButton {
+	-fx-padding: 70 0 0 0;
+}
+
 .optionsTabButton {
 	-fx-padding: 70 0 0 0;
+	-fx-background-image: url("../../img/buttons/options_0.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center, center;
 }
 
 .importTabButtonActive {
@@ -68,6 +79,17 @@
 	-fx-padding: 70 0 0 0;
 }
 
+.packsTabButtonActive {
+	-fx-padding: 70 0 0 0;
+}
+
+.repackerTabButtonActive {
+	-fx-padding: 70 0 0 0;
+}
+
 .optionsTabButtonActive {
 	-fx-padding: 70 0 0 0;
+	-fx-background-image: url("../../img/buttons/options_1.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center, center;
 }

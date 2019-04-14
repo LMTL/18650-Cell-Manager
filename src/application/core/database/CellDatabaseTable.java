@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import application.core.entities.Cell;
+import application.gui.scenes.MainScene;
 import javafx.application.Platform;
 
 public class CellDatabaseTable extends DatabaseTable {
@@ -59,6 +60,24 @@ public class CellDatabaseTable extends DatabaseTable {
 		});
 	}
 
+	public void deleteCell(int id) {
+		String sql = "DELETE FROM '" + TABLE_NAME + "' WHERE id=" + id + ";";
+
+		Platform.runLater(() -> {
+			try {
+					connection.setAutoCommit(false);
+					Statement stmt = connection.createStatement();
+					stmt.executeUpdate(sql);
+					connection.commit();
+					stmt.close();
+					selectAll();
+			} catch (SQLException e) {
+				System.out.println("Error while writing to database: " + e.getMessage());
+			}
+
+		});
+	}
+
     public void selectAll() {
         String sql = "SELECT id, brand, type, capacity, testDate, packID FROM '" + TABLE_NAME + "'";
 
@@ -74,7 +93,7 @@ public class CellDatabaseTable extends DatabaseTable {
 					if (!rs.getString("testDate").equals("")) date = ft.parse(rs.getString("testDate"));
 	                DatabaseManager.cellList.add(new Cell(rs.getString("brand"), rs.getString("type"), rs.getInt("id"), rs.getInt("capacity"), rs.getInt("packID"), date));
 	            }
-
+				if (MainScene.databaseView != null) MainScene.databaseView.getGUIController().resetGUI();
 			} catch (SQLException e) {
 				System.out.println("Error while writing to database: " + e.getMessage());
 			} catch (ParseException e) {

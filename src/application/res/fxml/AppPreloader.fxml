@@ -9,20 +9,20 @@
 
 <AnchorPane fx:id="root" maxHeight="0.0" maxWidth="0.0" minHeight="150.0" minWidth="350.0" prefHeight="0.0" prefWidth="0.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.views.preloader.AppPreloader">
 <children>
-<Text fx:id="statusText" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="errorMsgTFLabel" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" />
+<Text fx:id="statusText" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="errorMessageText" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="20.0" />
 <ProgressBar fx:id="progressbar" maxHeight="0.0" maxWidth="0.0" minHeight="11.0" prefHeight="0.0" prefWidth="0.0" progress="0.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="17.0" /><HBox alignment="CENTER" maxHeight="0.0" maxWidth="0.0" minHeight="25.0" prefHeight="0.0" prefWidth="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
 <children>
 <HBox maxHeight="0.0" maxWidth="0.0" minHeight="25.0" minWidth="25.0" prefHeight="0.0" prefWidth="0.0" styleClass="appLogo">
 <HBox.margin>
-<Insets right="10.0" top="1.0" />
+<Insets right="10.0" />
 </HBox.margin>
 </HBox>
-<Text fill="#eeeeee" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logoText" text="AzubiStatistik">
+<Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logoText" text="18650-Cell-Manager">
 <font>
-<Font size="24.0" />
+<Font size="1.0" />
 </font>
 <HBox.margin>
-<Insets top="4.0" />
+<Insets />
 </HBox.margin>
 <VBox.margin>
 <Insets top="20.0" />

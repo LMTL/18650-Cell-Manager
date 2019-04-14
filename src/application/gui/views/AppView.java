@@ -43,7 +43,7 @@ public abstract class AppView {
 	protected void loadResources() {
 		try {
 			String appViewFileName = this.getClass().getName().substring(this.getClass().getName().lastIndexOf(".") + 1);
-			//System.out.println(GUIConfig.DEFAULT_GUI_RES_URL + "fxml/" + appViewFileName + ".fxml");
+			
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/application/res/fxml/" + appViewFileName + ".fxml"));// i18n App.sceneManager.getResourceBundle()
 			root = (Node) fxmlLoader.load();
 			guiController = fxmlLoader.<GUIController>getController();

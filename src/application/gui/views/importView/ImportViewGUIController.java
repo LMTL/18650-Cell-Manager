@@ -56,7 +56,11 @@ public class ImportViewGUIController extends GUIController {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-
+    	capacityTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+    	    if (!newValue.matches("\\d{0,4}")) {
+    	    	capacityTextField.setText(oldValue);
+    	    }
+    	});
 
         resetGUI();
     }

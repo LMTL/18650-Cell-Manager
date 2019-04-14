@@ -22,6 +22,5 @@ public class DatabaseView extends AppView {
 	@Override
 	public void show() {
 		visible = appScene.addView(this);
-		getGUIController().resetGUI();
 	}
 }

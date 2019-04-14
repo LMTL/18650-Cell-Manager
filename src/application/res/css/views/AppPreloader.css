@@ -6,5 +6,5 @@
 }
 
 .appLogo {
-	
+	-fx-background-image: url("../../img/logo_25x25.png");
 }

@@ -8,6 +8,7 @@ import com.sun.javafx.application.LauncherImpl;
 import application.core.database.DatabaseManager;
 import application.core.entities.Cell;
 import application.gui.scenes.MainScene;
+import application.gui.views.preloader.AppPreloader;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.image.Image;
@@ -22,20 +23,20 @@ public class Main extends Application {
 
 	@Override
     public void init() throws Exception {
-		System.out.println("init");
+		AppPreloader.setStatustext("loading database...");
+		AppPreloader.progress.set(AppPreloader.progress.get() + 0.1);
 		dbManager = new DatabaseManager();
+
+		AppPreloader.setStatustext("loading GUI...");
 		mainScene = new MainScene(window);
+		AppPreloader.progress.set(AppPreloader.progress.get() + 0.1);
 		MainScene.importView.show();
+		AppPreloader.progress.set(AppPreloader.progress.get() + 0.1);
 
-		Cell c = new Cell("Samsung", "0815", 3200, -1, Date.valueOf(LocalDate.now()));
-		//dbManager.database.addCell(c);
-
-//		while (AppPreloader.progress.get() <= 1.0) {
-//			AppPreloader.progress.set(AppPreloader.progress.get() + 0.1);
-//			Thread.sleep(10);
-//		}
-
-		System.out.println("init rdy");
+		while (AppPreloader.progress.get() <= 1.0) {
+			AppPreloader.progress.set(AppPreloader.progress.get() + 0.1);
+			Thread.sleep(50);
+		}
 	}
 
 	@Override
@@ -61,6 +62,6 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
-		LauncherImpl.launchApplication(Main.class, args); //AppPreloader.class,
+		LauncherImpl.launchApplication(Main.class, AppPreloader.class, args); //AppPreloader.class,
 	}
 }

@@ -89,3 +89,10 @@
 .settingsButton .arrow {
 
 }
+
+.deleteButton {
+	-fx-background-color: transparent;
+	-fx-background-image: url("../../res/img/buttons/delete.png");
+	-fx-background-position: center;
+	-fx-background-repeat: no-repeat;
+}

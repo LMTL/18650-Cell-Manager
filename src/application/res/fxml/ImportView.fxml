@@ -28,10 +28,13 @@
 <HBox.margin>
 <Insets top="3.0" />
 </HBox.margin></Text>
-<TextField fx:id="brandTextField" maxHeight="0.0" maxWidth="0.0" minHeight="30.0" minWidth="150.0" onKeyReleased="#handleKeyEvent" prefHeight="0.0" prefWidth="0.0">
+<TextField fx:id="brandTextField" maxHeight="0.0" maxWidth="0.0" minHeight="28.0" minWidth="150.0" onKeyReleased="#handleKeyEvent" prefHeight="0.0" prefWidth="0.0">
 <HBox.margin>
 <Insets left="5.0" />
 </HBox.margin>
+<padding>
+<Insets bottom="-5.0" left="3.0" right="-5.0" top="-5.0" />
+</padding>
 </TextField>
 </children>
 <StackPane.margin>
@@ -49,10 +52,13 @@
 <Insets top="3.0" />
 </HBox.margin>
 </Text>
-<TextField fx:id="capacityTextField" maxHeight="0.0" maxWidth="0.0" minHeight="30.0" minWidth="150.0" onKeyReleased="#handleKeyEvent" prefHeight="0.0" prefWidth="0.0" promptText="mAh">
+<TextField fx:id="capacityTextField" maxHeight="0.0" maxWidth="0.0" minHeight="28.0" minWidth="150.0" onKeyReleased="#handleKeyEvent" prefHeight="0.0" prefWidth="0.0" promptText="mAh">
 <HBox.margin>
 <Insets left="5.0" />
 </HBox.margin>
+<padding>
+<Insets bottom="-5.0" left="3.0" right="-5.0" top="-5.0" />
+</padding>
 </TextField>
 </children>
 </HBox>
@@ -66,10 +72,13 @@
 <HBox.margin>
 <Insets top="3.0" />
 </HBox.margin>
-</Text><TextField fx:id="typeTextField" maxHeight="0.0" maxWidth="0.0" minHeight="30.0" minWidth="150.0" onKeyReleased="#handleKeyEvent" prefHeight="0.0" prefWidth="0.0">
+</Text><TextField fx:id="typeTextField" maxHeight="0.0" maxWidth="0.0" minHeight="28.0" minWidth="150.0" onKeyReleased="#handleKeyEvent" prefHeight="0.0" prefWidth="0.0">
 <HBox.margin>
 <Insets left="5.0" />
-</HBox.margin></TextField>
+</HBox.margin>
+<padding>
+<Insets bottom="-5.0" left="3.0" right="-5.0" top="-5.0" />
+</padding></TextField>
 </children>
 <VBox.margin>
 <Insets bottom="10.0" />
@@ -79,7 +88,7 @@
 <HBox.margin>
 <Insets top="3.0" />
 </HBox.margin>
-</Text><DatePicker fx:id="datePicker" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" promptText="Date">
+</Text><DatePicker fx:id="datePicker" maxHeight="30.0" maxWidth="150.0" minHeight="28.0" promptText="Date">
 <HBox.margin>
 <Insets left="5.0" />
 </HBox.margin></DatePicker>

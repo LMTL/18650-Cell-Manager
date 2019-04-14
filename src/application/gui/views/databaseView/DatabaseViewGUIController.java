@@ -7,9 +7,16 @@ import java.util.ResourceBundle;
 import application.core.database.DatabaseManager;
 import application.core.entities.Cell;
 import application.gui.controller.GUIController;
+import application.gui.scenes.MainScene;
 import application.gui.views.AppView;
+import javafx.application.Platform;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -32,17 +39,15 @@ public class DatabaseViewGUIController extends GUIController {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
-
-		//resetGUI();
 	}
 
 	@Override
 	public void resetGUI() {
 		listView.getItems().clear();
 
-
 		for (Cell c : DatabaseManager.cellList) {
 			HBox hBox = new HBox();
+			hBox.setId(String.valueOf(c.id));
 			Text id = new Text(String.valueOf(c.id));
 			id.getStyleClass().add("appText");
 			HBox idBox = new HBox(id);
@@ -78,7 +83,7 @@ public class DatabaseViewGUIController extends GUIController {
 			SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
 			String dateString = "";
 			if (c.testDate != null) dateString = ft.format(c.testDate);
-			
+
 			Text testDate = new Text(dateString);
 			testDate.getStyleClass().add("appText");
 			HBox testDateBox = new HBox(testDate);
@@ -97,9 +102,24 @@ public class DatabaseViewGUIController extends GUIController {
 			packIDBox.setMaxWidth(100);
 			hBox.getChildren().add(packIDBox);
 
+			Button del = new Button();
+			del.setId(String.valueOf(c.id));
+			del.getStyleClass().add("deleteButton");
+			del.setMaxHeight(20);
+			del.setMaxWidth(20);
+			del.setMinHeight(20);
+			del.setMinWidth(20);
+
+			del.setOnMouseClicked((event)->{
+				Platform.runLater(() -> {
+					DatabaseManager.database.deleteCell(Integer.valueOf(((Node) event.getSource()).getId()));
+				});
+			});
+
+			hBox.getChildren().add(del);
+
 			listView.getItems().add(hBox);
 		}
-
 	}
 
 	@Override

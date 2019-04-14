@@ -20,13 +20,20 @@
 </VBox.margin>
 <effect>
 <DropShadow />
-</effect></Button><Button fx:id="packsButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,optionsTabButton" text="Packs" textAlignment="CENTER">
+</effect></Button><Button fx:id="packsButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,packsTabButton" text="Packs" textAlignment="CENTER">
 <effect>
 <DropShadow />
 </effect>
 <VBox.margin>
 <Insets bottom="5.0" />
-</VBox.margin></Button><Button fx:id="repackerButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,optionsTabButton" text="Repacker">
+</VBox.margin></Button><Button fx:id="repackerButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,repackerTabButton" text="Repacker">
+<effect>
+<DropShadow />
+</effect>
+<VBox.margin>
+<Insets bottom="5.0" />
+</VBox.margin>
+</Button><Button fx:id="optionsButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,optionsTabButton" text="Options">
 <effect>
 <DropShadow />
 </effect>
