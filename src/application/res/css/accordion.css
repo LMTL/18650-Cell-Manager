@@ -1,0 +1,32 @@
+.accordion .titled-pane {
+    -fx-background-color: transparent;
+        -fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 11pt;
+	-fx-text-fill: #ffffff;	
+	-fx-fill: #ffffff;
+	-fx-border: null;
+}
+
+.accordion .titled-pane > *.content {
+    -fx-background-color: transparent;
+        -fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 11pt;
+	-fx-text-fill: #ffffff;	
+	-fx-fill: #ffffff;
+	-fx-border: null;
+}
+
+.accordion .titled-pane .title {
+    -fx-background-color: transparent;
+    -fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 11pt;
+	-fx-text-fill: #ffffff;	
+	-fx-fill: #ffffff;
+	-fx-border: null;
+}

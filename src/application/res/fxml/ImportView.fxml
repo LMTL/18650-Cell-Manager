@@ -9,8 +9,8 @@
 
 <AnchorPane minHeight="530.0" minWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.views.importView.ImportViewGUIController">
 <children><AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-<children><HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-<children><VBox fx:id="importProgressLabel" alignment="TOP_CENTER" maxHeight="0.0" maxWidth="0.0" minHeight="225.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0" styleClass="progressLabelBG" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+<children><StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<children><VBox fx:id="importLabel" alignment="TOP_CENTER" maxHeight="0.0" maxWidth="0.0" minHeight="225.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0" styleClass="progressLabelBG" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
 <children><AnchorPane maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0">
 <children>
 <HBox maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="50.0" prefHeight="0.0" prefWidth="0.0" styleClass="titlebarBG_left" AnchorPane.leftAnchor="25.0" />
@@ -19,7 +19,7 @@
 </children>
 </AnchorPane><Text fx:id="importProgressTextLabel" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appText" text="Cell Import" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="200.0">
 <VBox.margin>
-<Insets bottom="30.0" top="15.0" />
+<Insets bottom="30.0" top="10.0" />
 </VBox.margin></Text><VBox alignment="TOP_CENTER" maxWidth="500.0" minWidth="500.0" prefHeight="225.0" prefWidth="500.0">
 <children><HBox alignment="TOP_CENTER">
 <children><VBox>
@@ -102,7 +102,7 @@
 </children>
 <VBox.margin>
 <Insets left="30.0" right="30.0" />
-</VBox.margin></VBox><Button fx:id="importButton" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="appButton" text="Import">
+</VBox.margin></VBox><Button fx:id="importButton" focusTraversable="false" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="appButton" text="Import">
 <HBox.margin>
 <Insets left="15.0" right="10.0" />
 </HBox.margin>
@@ -118,7 +118,39 @@
 </effect>
 <HBox.margin>
 <Insets top="-25.0" />
-</HBox.margin></VBox>
-</children></HBox>
+</HBox.margin></VBox><VBox fx:id="cellIDLabel" alignment="TOP_CENTER" maxHeight="0.0" maxWidth="0.0" minHeight="225.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0" styleClass="progressLabelBG">
+<children>
+<AnchorPane maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0">
+<children>
+<HBox maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="50.0" prefHeight="0.0" prefWidth="0.0" styleClass="titlebarBG_left" AnchorPane.leftAnchor="25.0" />
+<HBox maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="125.0" prefHeight="0.0" prefWidth="0.0" styleClass="titlebarBG_center" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
+<HBox maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="50.0" prefHeight="0.0" prefWidth="0.0" styleClass="titlebarBG_right" AnchorPane.rightAnchor="25.0" />
+</children>
+</AnchorPane>
+<Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appText" text="Cell Import" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="200.0">
+<VBox.margin>
+<Insets bottom="30.0" top="10.0" />
+</VBox.margin>
+</Text><Text fx:id="cellIDText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appTextBold" text="Write down ID # onto the cell!">
+<VBox.margin>
+<Insets bottom="50.0" top="25.0" />
+</VBox.margin></Text>
+<Button fx:id="okButton" focusTraversable="false" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="appButton" text="Ok">
+<effect>
+<DropShadow color="#000000e5" />
+</effect>
+<HBox.margin>
+<Insets left="15.0" right="10.0" />
+</HBox.margin>
+<VBox.margin>
+<Insets bottom="15.0" />
+</VBox.margin>
+</Button>
+</children>
+<effect>
+<DropShadow color="#000000e5" height="30.0" radius="14.5" width="30.0" />
+</effect>
+</VBox>
+</children></StackPane>
 </children></AnchorPane>
 </children></AnchorPane>

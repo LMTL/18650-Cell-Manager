@@ -7,19 +7,16 @@ import java.util.ResourceBundle;
 import application.core.database.DatabaseManager;
 import application.core.entities.Cell;
 import application.gui.controller.GUIController;
-import application.gui.scenes.MainScene;
 import application.gui.views.AppView;
 import javafx.application.Platform;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 public class DatabaseViewGUIController extends GUIController {
@@ -38,7 +35,7 @@ public class DatabaseViewGUIController extends GUIController {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-
+		resetGUI();
 	}
 
 	@Override
@@ -97,7 +94,7 @@ public class DatabaseViewGUIController extends GUIController {
 			if (c.packID < 0) packID.setText("-");
 			packID.getStyleClass().add("appText");
 			HBox packIDBox = new HBox(packID);
-			packIDBox.setStyle("-fx-padding: 0 0 0 30");
+			packIDBox.setStyle("-fx-padding: 0 30 0 38");
 			packID.setWrappingWidth(100);
 			packIDBox.setMaxWidth(100);
 			hBox.getChildren().add(packIDBox);

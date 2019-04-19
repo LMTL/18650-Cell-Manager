@@ -18,6 +18,7 @@ public class GUIConfig {
 																									"css/treeview.css",
 																									"css/progressbar.css",
 																									"css/textfield.css",
-																									"css/titlebar.css"
+																									"css/titlebar.css",
+																									"css/accordion.css"
 																								  ));
 }

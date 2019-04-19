@@ -8,32 +8,32 @@
 
 <AnchorPane maxHeight="0.0" maxWidth="0.0" minHeight="600.0" minWidth="111.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.views.menubarView.MenubarViewGUIController">
 <children><VBox maxHeight="0.0" maxWidth="0.0" minWidth="111.0" prefHeight="0.0" prefWidth="0.0" styleClass="mainMenubar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-<children><Button fx:id="importButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,importTabButtonActive" text="Import">
+<children><Button fx:id="importButton" focusTraversable="false" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,importTabButtonActive" text="Import">
 <VBox.margin>
 <Insets bottom="5.0" />
 </VBox.margin>
 <effect>
 <DropShadow />
-</effect></Button><Button fx:id="databaseButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,databaseTabButton" text="Database">
+</effect></Button><Button fx:id="databaseButton" focusTraversable="false" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,databaseTabButton" text="Database">
 <VBox.margin>
 <Insets bottom="5.0" />
 </VBox.margin>
 <effect>
 <DropShadow />
-</effect></Button><Button fx:id="packsButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,packsTabButton" text="Packs" textAlignment="CENTER">
+</effect></Button><Button fx:id="packsButton" focusTraversable="false" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,packsTabButton" text="Packs" textAlignment="CENTER">
 <effect>
 <DropShadow />
 </effect>
 <VBox.margin>
 <Insets bottom="5.0" />
-</VBox.margin></Button><Button fx:id="repackerButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,repackerTabButton" text="Repacker">
+</VBox.margin></Button><Button fx:id="repackerButton" focusTraversable="false" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,repackerTabButton" text="Repacker">
 <effect>
 <DropShadow />
 </effect>
 <VBox.margin>
 <Insets bottom="5.0" />
 </VBox.margin>
-</Button><Button fx:id="optionsButton" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,optionsTabButton" text="Options">
+</Button><Button fx:id="optionsButton" focusTraversable="false" minHeight="100.0" minWidth="100.0" mnemonicParsing="false" onMouseReleased="#handleMouseEvent" styleClass="mainMenuButton,optionsTabButton" text="Options">
 <effect>
 <DropShadow />
 </effect>

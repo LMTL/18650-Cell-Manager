@@ -34,4 +34,16 @@ public class Cell {
 		this.packID = packID;
 		this.testDate = null;
 	}
+
+	public String toCSV() {
+		String result = "";
+
+		result += id + ";";
+		result += brand + ";";
+		result += type + ";";
+		result += capacity + ";";
+		result += packID + ";";
+		result += testDate;
+		return result;
+	}
 }
