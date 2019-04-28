@@ -10,7 +10,7 @@
 <AnchorPane minHeight="530.0" minWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.gui.views.importView.ImportViewGUIController">
 <children><AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 <children><StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-<children><VBox fx:id="importLabel" alignment="TOP_CENTER" maxHeight="0.0" maxWidth="0.0" minHeight="225.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0" styleClass="progressLabelBG" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+<children><VBox fx:id="importLabel" alignment="TOP_CENTER" maxHeight="0.0" maxWidth="0.0" minHeight="225.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0" styleClass="dialogBackground" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
 <children><AnchorPane maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0">
 <children>
 <HBox maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="50.0" prefHeight="0.0" prefWidth="0.0" styleClass="titlebarBG_left" AnchorPane.leftAnchor="25.0" />
@@ -118,7 +118,7 @@
 </effect>
 <HBox.margin>
 <Insets top="-25.0" />
-</HBox.margin></VBox><VBox fx:id="cellIDLabel" alignment="TOP_CENTER" maxHeight="0.0" maxWidth="0.0" minHeight="225.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0" styleClass="progressLabelBG">
+</HBox.margin></VBox><VBox fx:id="cellIDLabel" alignment="TOP_CENTER" maxHeight="0.0" maxWidth="0.0" minHeight="225.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0" styleClass="dialogBackground">
 <children>
 <AnchorPane maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="500.0" prefHeight="0.0" prefWidth="0.0">
 <children>
@@ -143,7 +143,7 @@
 <Insets left="15.0" right="10.0" />
 </HBox.margin>
 <VBox.margin>
-<Insets bottom="15.0" />
+<Insets bottom="10.0" />
 </VBox.margin>
 </Button>
 </children>

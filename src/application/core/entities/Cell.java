@@ -43,7 +43,10 @@ public class Cell {
 		result += type + ";";
 		result += capacity + ";";
 		result += packID + ";";
-		result += testDate;
+		if (testDate != null) {
+			result += testDate;
+			System.out.println(testDate);
+		}
 		return result;
 	}
 }

@@ -10,10 +10,8 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -45,11 +43,11 @@ public class AppPreloader extends Preloader implements Initializable {
 
         		scene = new Scene(root, WIDTH, HEIGHT);
         		scene.setFill(null);
-        		
+
         		scene.getStylesheets().add(GUIConfig.DEFAULT_GUI_RES_URL + "css/views/" + appViewFileName  + ".css");
         		scene.getStylesheets().add(GUIConfig.DEFAULT_GUI_RES_URL + "css/progressbar.css");
         		scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Roboto");
-        		
+
         		for (String css : GUIConfig.defaultGUIElementsCSS) scene.getStylesheets().add(GUIConfig.DEFAULT_GUI_RES_URL + css);
 
         	} catch (Exception e) {
@@ -78,11 +76,7 @@ public class AppPreloader extends Preloader implements Initializable {
 
     @Override
     public void handleApplicationNotification(PreloaderNotification info) {
-    	Platform.runLater(() -> {
-    		if (info instanceof ProgressNotification) {
-    			((ProgressBar) root.lookup("#progressbar")).setProgress(((ProgressNotification) info).getProgress() / 100);
-    		}
-    	});
+
     }
 
     @Override

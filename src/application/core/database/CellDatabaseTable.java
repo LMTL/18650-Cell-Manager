@@ -1,5 +1,8 @@
 package application.core.database;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,11 +13,15 @@ import java.util.Date;
 
 import application.core.entities.Cell;
 import application.gui.scenes.MainScene;
-import javafx.application.Platform;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
 
 public class CellDatabaseTable extends DatabaseTable {
 
 	public static int lastAddedCellID = 1;
+	public static String csvColumnTitles = "id;brand;type;capacity;testDate;packID";
+	public static SimpleDoubleProperty exportProgress = new SimpleDoubleProperty();
+	public static SimpleStringProperty exportTextProgress = new SimpleStringProperty();
 
 	public CellDatabaseTable(Connection connection, String name) {
 		super(connection, name);
@@ -95,6 +102,7 @@ public class CellDatabaseTable extends DatabaseTable {
 				DatabaseManager.cellList.add(new Cell(rs.getString("brand"), rs.getString("type"), rs.getInt("id"),
 						rs.getInt("capacity"), rs.getInt("packID"), date));
 			}
+
 			if (MainScene.databaseView != null)
 				MainScene.databaseView.getGUIController().resetGUI();
 		} catch (SQLException e) {
@@ -103,5 +111,47 @@ public class CellDatabaseTable extends DatabaseTable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public void resetDatabase() {
+		try {
+			Statement stat = connection.createStatement();
+			String cmd = "DROP TABLE IF EXISTS '" + TABLE_NAME + "'";
+			stat.executeUpdate(cmd);
+
+		} catch (SQLException e) {
+			System.out.println("Could not reset CellDatabaseTable. Errormessage:" + e.getMessage());
+			System.exit(0);
+		}
+		initTable();
+	}
+
+	public void exportDatabaseToCSV(String filePath) throws IOException {
+		BufferedWriter bw = null;
+		exportProgress.set(0.0);
+		exportTextProgress.set("");
+
+		bw = new BufferedWriter(new FileWriter(filePath));
+		bw.write(CellDatabaseTable.csvColumnTitles);
+		bw.newLine();
+		double counter = 0, cellInDatabase = DatabaseManager.cellList.size();
+
+		for (Cell c : DatabaseManager.cellList) {
+			bw.write(c.toCSV());
+			bw.newLine();
+
+			counter++;
+
+			try {
+				Thread.sleep(5);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			exportProgress.set(counter / cellInDatabase);
+			exportTextProgress.set(((int) counter) + " / " + ((int) cellInDatabase));
+		}
+
+		if (bw != null) bw.close();
 	}
 }

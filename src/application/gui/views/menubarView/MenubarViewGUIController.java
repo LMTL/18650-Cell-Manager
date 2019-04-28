@@ -27,6 +27,8 @@ public class MenubarViewGUIController extends GUIController {
 			activateButton(importButton);
 
 			MainScene.databaseView.hide();
+			MainScene.optionView.hide();
+
 			MainScene.importView.show();
 		}
 
@@ -38,6 +40,8 @@ public class MenubarViewGUIController extends GUIController {
 			activateButton(databaseButton);
 
 			MainScene.importView.hide();
+			MainScene.optionView.hide();
+
 			MainScene.databaseView.show();
 		}
 
@@ -50,6 +54,7 @@ public class MenubarViewGUIController extends GUIController {
 
 			MainScene.importView.hide();
 			MainScene.databaseView.hide();
+			MainScene.optionView.hide();
 
 
 		}
@@ -63,10 +68,11 @@ public class MenubarViewGUIController extends GUIController {
 
 			MainScene.importView.hide();
 			MainScene.databaseView.hide();
+			MainScene.optionView.hide();
 
 
 		}
-		
+
 		if (e.getSource() == optionsButton && e.getButton() == MouseButton.PRIMARY) {
 			deactivateButton(importButton);
 			deactivateButton(databaseButton);
@@ -77,7 +83,7 @@ public class MenubarViewGUIController extends GUIController {
 			MainScene.importView.hide();
 			MainScene.databaseView.hide();
 
-
+			MainScene.optionView.show();
 		}
 	}
 
@@ -92,7 +98,7 @@ public class MenubarViewGUIController extends GUIController {
 			MainScene.databaseView.hide();
 			MainScene.importView.show();
 			//TODO: show view
-			
+
 			e.consume();
 		}
 
@@ -105,7 +111,7 @@ public class MenubarViewGUIController extends GUIController {
 			MainScene.importView.hide();
 			MainScene.databaseView.show();
 			//TODO: show view
-			
+
 			e.consume();
 		}
 
@@ -118,7 +124,7 @@ public class MenubarViewGUIController extends GUIController {
 			MainScene.importView.hide();
 			MainScene.databaseView.hide();
 			//TODO: show view
-			
+
 			e.consume();
 		}
 
@@ -131,10 +137,10 @@ public class MenubarViewGUIController extends GUIController {
 			MainScene.importView.hide();
 			MainScene.databaseView.hide();
 			//TODO: show view
-			
+
 			e.consume();
 		}
-		
+
 		if (!e.isConsumed() && e.getCode() == KeyCode.DIGIT5) {
 			deactivateButton(importButton);
 			deactivateButton(databaseButton);
@@ -144,7 +150,7 @@ public class MenubarViewGUIController extends GUIController {
 			MainScene.importView.hide();
 			MainScene.databaseView.hide();
 			//TODO: show view
-			
+
 			e.consume();
 		}
 	}

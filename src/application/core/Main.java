@@ -1,12 +1,9 @@
 package application.core;
 
-import java.sql.Date;
-import java.time.LocalDate;
 
 import com.sun.javafx.application.LauncherImpl;
 
 import application.core.database.DatabaseManager;
-import application.core.entities.Cell;
 import application.gui.scenes.MainScene;
 import application.gui.views.preloader.AppPreloader;
 import javafx.application.Application;

@@ -4,6 +4,7 @@ import application.gui.views.databaseView.DatabaseView;
 import application.gui.views.importView.ImportView;
 import application.gui.views.mainView.MainView;
 import application.gui.views.menubarView.MenubarView;
+import application.gui.views.optionView.OptionView;
 import application.gui.views.titlebarView.TitlebarView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -14,6 +15,8 @@ public class MainScene extends AppScene {
 	public static TitlebarView titlebar;
 	public static ImportView importView;
 	public static DatabaseView databaseView;
+	public static OptionView optionView;
+
 
 	private MenubarView menubar;
 
@@ -29,6 +32,7 @@ public class MainScene extends AppScene {
 		titlebar = new TitlebarView(this);
 		importView = new ImportView(this);
 		databaseView = new DatabaseView(this);
+		optionView = new OptionView(this);
 	}
 
 	@Override

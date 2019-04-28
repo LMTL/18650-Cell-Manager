@@ -9,6 +9,7 @@ public class GUIConfig {
 
 	public static LinkedList<String> defaultGUIElementsCSS = new LinkedList<String> (Arrays.asList(
 																									"css/appText.css",
+																									"css/hyperlink.css",
 																									"css/buttons.css",
 																									"css/checkbox.css",
 																									"css/combobox.css",
@@ -19,6 +20,7 @@ public class GUIConfig {
 																									"css/progressbar.css",
 																									"css/textfield.css",
 																									"css/titlebar.css",
-																									"css/accordion.css"
+																									"css/accordion.css",
+																									"css/backgrounds.css"
 																								  ));
 }

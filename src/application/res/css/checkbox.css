@@ -17,7 +17,7 @@
 }
 
 .check-box:hover > .box {
-  	-fx-border-color: #565961;  	
+  	-fx-border-color: #565961;
 }
 
 .check-box > .box > .mark {

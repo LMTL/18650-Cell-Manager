@@ -1,0 +1,6 @@
+.dialogBackground {
+	-fx-border-color: #000000, #3B3F48;
+	-fx-border-insets: 0, 1;
+	-fx-background-color: #202020;
+	-fx-background-color: radial-gradient(focus-distance 0% , center 50% 0% , radius 50% , #2B384D, #1E2430);
+}

@@ -1,0 +1,14 @@
+.hLineLeft {
+	-fx-background-image: url("../../img/hLineLeft.png");
+	-fx-background-repeat: repeat no-repeat;
+}
+
+.hLineCenter {
+	-fx-background-image: url("../../img/hLine.png");
+	-fx-background-repeat: repeat no-repeat;
+}
+
+.hLineRight {
+	-fx-background-image: url("../../img/hLineRight.png");
+	-fx-background-repeat: repeat no-repeat;
+}

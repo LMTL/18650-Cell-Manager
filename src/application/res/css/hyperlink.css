@@ -1,0 +1,15 @@
+.hyperlink {
+	-fx-font-family: "Roboto";
+	-fx-smooth: true;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 12pt;
+	-fx-text-fill: #0889C5;
+	-fx-fill: #0889C5;
+	-fx-border-color: transparent;
+}
+
+.hyperlink:hover {
+	-fx-text-fill: #00aeff;
+	-fx-fill: #00aeff;
+	-fx-border-color: transparent;
+}
