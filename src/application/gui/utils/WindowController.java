@@ -187,8 +187,8 @@ public class WindowController implements EventHandler<MouseEvent> {
 		        	if (resizeInAction) return;
 		            if (me.getButton() == MouseButton.PRIMARY && !windowMaximized) {
 		            	double posX = me.getScreenX() - titlebarStartX, posY = me.getScreenY() - titlebarStartY;
-		            	if (posX < 5) posX = 0;
-		            	if (posX > maxBounds.getWidth() - node.getScene().getWidth()) posX = maxBounds.getWidth() - node.getScene().getWidth();
+		            	//if (posX < 5) posX = 0;
+		            	//if (posX > maxBounds.getWidth() - node.getScene().getWidth()) posX = maxBounds.getWidth() - node.getScene().getWidth();
 		            	if (posY < 5) posY = 0;
 		            	if (posY > maxBounds.getHeight() - node.getScene().getHeight()) posY = maxBounds.getHeight() - node.getScene().getHeight();
 

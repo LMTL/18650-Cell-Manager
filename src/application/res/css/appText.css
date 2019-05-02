@@ -1,5 +1,5 @@
 .appText {	
-	-fx-font-family: "Verdana";
+	-fx-font-family: "Roboto";
 	-fx-smooth: true;
 	-fx-font-smoothing-type: lcd;
 	-fx-font-size: 12pt;
@@ -8,7 +8,7 @@
 }
 
 .appTextBold {	
-	-fx-font-family: "Verdana";
+	-fx-font-family: "Roboto";
 	-fx-smooth: true;
 	-fx-font-smoothing-type: lcd;
 	-fx-font-size: 12pt;
@@ -18,7 +18,7 @@
 }
 
 .logoText {
-	-fx-font-family: "Verdana";
+	-fx-font-family: "Roboto";
 	-fx-font-smoothing-type: lcd;
 	-fx-font-size: 14pt;
 	-fx-smooth: true;
@@ -33,14 +33,14 @@
     	-fx-border-insets: 0, 1;
     	-fx-border-color: #000000, #3C424E;
     	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.75) , 10, 0, 0, 0);
-	-fx-font-family: "Verdana";
+	-fx-font-family: "Roboto";
 	-fx-font-size: 11pt;
 	-fx-text-fill: #ffffff;
 }
 
 .errorMessageText {
 	-fx-fill: #00aeff;
-	-fx-font-family: "Verdana";
+	-fx-font-family: "Roboto";
 	-fx-smooth: true;
 	-fx-font-smoothing-type: lcd;
 	-fx-font-size: 10pt;

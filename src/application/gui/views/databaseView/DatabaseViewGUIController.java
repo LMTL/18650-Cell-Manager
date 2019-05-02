@@ -10,18 +10,18 @@ import application.gui.controller.GUIController;
 import application.gui.views.AppView;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
 public class DatabaseViewGUIController extends GUIController {
 
-	@FXML ListView<HBox> listView;
+	@FXML GridPane gridPane;
 
 	@Override
 	public void handleMouseEvent(MouseEvent e) {
@@ -35,90 +35,93 @@ public class DatabaseViewGUIController extends GUIController {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+
 		resetGUI();
 	}
 
 	@Override
 	public void resetGUI() {
-		listView.getItems().clear();
+		initGridPane();
+		int rowCounter = 1;
+		SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+		String dateString = "";
 
-		for (Cell c : DatabaseManager.cellList) {
-			HBox hBox = new HBox();
-			hBox.setId(String.valueOf(c.id));
-			Text id = new Text(String.valueOf(c.id));
+		for (Cell cell : DatabaseManager.cellList) {
+
+			Text id = new Text(String.valueOf(cell.id));
 			id.getStyleClass().add("appText");
-			HBox idBox = new HBox(id);
-			//idBox.setStyle("-fx-padding: 0 0 0 75");
-			id.setWrappingWidth(50);
-			idBox.setMaxWidth(50);
-			hBox.getChildren().add(idBox);
 
-			Text brand = new Text(c.brand);
+			Text brand = new Text(cell.brand);
 			brand.getStyleClass().add("appText");
-			HBox brandBox = new HBox(brand);
-			brandBox.setStyle("-fx-padding: 0 0 0 32");
-			brand.setWrappingWidth(87);
-			brandBox.setMaxWidth(135);
-			hBox.getChildren().add(brandBox);
 
-			Text type = new Text(c.type);
+			Text type = new Text(cell.type);
 			type.getStyleClass().add("appText");
-			HBox typeBox = new HBox(type);
-			typeBox.setStyle("-fx-padding: 0 0 0 52");
-			type.setWrappingWidth(90);
-			typeBox.setMaxWidth(140);
-			hBox.getChildren().add(typeBox);
 
-			Text capacity = new Text(String.valueOf(c.capacity));
+			Text capacity = new Text(String.valueOf(cell.capacity));
 			capacity.getStyleClass().add("appText");
-			HBox capacityBox = new HBox(capacity);
-			capacityBox.setStyle("-fx-padding: 0 0 0 52");
-			capacity.setWrappingWidth(87);
-			typeBox.setMaxWidth(135);
-			hBox.getChildren().add(capacityBox);
 
-			SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
-			String dateString = "";
-			if (c.testDate != null) dateString = ft.format(c.testDate);
+			if (cell.testDate != null) dateString = ft.format(cell.testDate);
+			else dateString = "-";
 
 			Text testDate = new Text(dateString);
 			testDate.getStyleClass().add("appText");
-			HBox testDateBox = new HBox(testDate);
-			testDateBox.setStyle("-fx-padding: 0 0 0 19");
-			testDate.setWrappingWidth(100);
-			testDateBox.setMaxWidth(100);
-			hBox.getChildren().add(testDateBox);
 
-
-			Text packID = new Text(String.valueOf(c.packID));
-			if (c.packID < 0) packID.setText("-");
+			Text packID = new Text(String.valueOf(cell.packID));
+			if (cell.packID < 0) packID.setText("-");
 			packID.getStyleClass().add("appText");
-			HBox packIDBox = new HBox(packID);
-			packIDBox.setStyle("-fx-padding: 0 30 0 38");
-			packID.setWrappingWidth(100);
-			packIDBox.setMaxWidth(100);
-			hBox.getChildren().add(packIDBox);
 
 			Button del = new Button();
-			del.setId(String.valueOf(c.id));
+			del.setId(String.valueOf(cell.id));
 			del.getStyleClass().add("deleteButton");
-			del.setMaxHeight(20);
-			del.setMaxWidth(20);
-			del.setMinHeight(20);
-			del.setMinWidth(20);
-
 			del.setOnMouseClicked((event)->{
 				Platform.runLater(() -> {
 					DatabaseManager.database.deleteCell(Integer.valueOf(((Node) event.getSource()).getId()));
 				});
 			});
+			del.setMaxHeight(20);
+			del.setMaxWidth(20);
+			del.setMinHeight(20);
+			del.setMinWidth(20);
 
-			hBox.getChildren().add(del);
+			gridPane.addRow(rowCounter, id, brand, type, capacity, testDate, packID, del);
+			GridPane.setHalignment(del, javafx.geometry.HPos.RIGHT);
 
-			listView.getItems().add(hBox);
+			rowCounter++;
+			dateString = null;
 		}
+
+		gridPane.setHgap(5);
+		gridPane.setVgap(5);
+		gridPane.setPadding(new Insets(5, 10, 5, 10));
+
+		System.out.println(gridPane.getRowConstraints().get(0));
+
 	}
 
+	private void initGridPane() {
+		gridPane.getChildren().clear();
+
+		Text id = new Text("#");
+		id.getStyleClass().add("appText");
+
+		Text brand = new Text("Brand");
+		brand.getStyleClass().add("appText");
+
+		Text type = new Text("Type");
+		type.getStyleClass().add("appText");
+
+		Text capacity = new Text("Capacity");
+		capacity.getStyleClass().add("appText");
+
+
+		Text testDate = new Text("Testdate");
+		testDate.getStyleClass().add("appText");
+
+		Text packID = new Text("PackID");
+		packID.getStyleClass().add("appText");
+
+		gridPane.addRow(0, id, brand, type, capacity, testDate, packID);
+	}
 	@Override
 	public AppView getAppView() {
 		// TODO Auto-generated method stub
