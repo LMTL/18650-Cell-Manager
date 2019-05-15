@@ -42,7 +42,6 @@ public class DatabaseViewGUIController extends GUIController {
 	public void resetGUI() {
 		initGridPane();
 		int rowCounter = 1;
-		SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
 		String dateString = "";
 
 		for (Cell cell : DatabaseManager.cellList) {
@@ -58,8 +57,7 @@ public class DatabaseViewGUIController extends GUIController {
 
 			Text capacity = new Text(String.valueOf(cell.capacity));
 			capacity.getStyleClass().add("appText");
-
-			if (cell.testDate != null) dateString = ft.format(cell.testDate);
+			if (cell.testDate != null) dateString = Cell.cellDateFormater.format(cell.testDate);
 			else dateString = "-";
 
 			Text testDate = new Text(dateString);
@@ -92,9 +90,6 @@ public class DatabaseViewGUIController extends GUIController {
 		gridPane.setHgap(5);
 		gridPane.setVgap(5);
 		gridPane.setPadding(new Insets(5, 10, 5, 10));
-
-		System.out.println(gridPane.getRowConstraints().get(0));
-
 	}
 
 	private void initGridPane() {

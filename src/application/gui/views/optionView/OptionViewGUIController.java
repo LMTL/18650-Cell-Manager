@@ -79,11 +79,14 @@ public class OptionViewGUIController extends GUIController {
 		importDatabaseButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(final ActionEvent e) {
+				importDatabaseButton.setDisable(true);
+				exportDatabaseButton.setDisable(true);
+				resetDatabaseButton.setDisable(true);
 				fileChooser.setTitle("Import Database");
 				File file = fileChooser.showOpenDialog(Main.window);
 				if (file != null) {
-					System.out.println(file.getAbsolutePath());
-				}
+					importDatabase(file.getAbsolutePath());
+				} else resetGUI();
 			}
 		});
 
@@ -91,6 +94,8 @@ public class OptionViewGUIController extends GUIController {
 			public void handle(ActionEvent e) {
 				Platform.runLater(() -> {
 				exportDatabaseButton.setDisable(true);
+				importDatabaseButton.setDisable(true);
+				resetDatabaseButton.setDisable(true);
 				fileChooser.setTitle("Export Database");
 				File file = fileChooser.showSaveDialog(Main.window);
 				if (file != null) {
@@ -123,7 +128,7 @@ public class OptionViewGUIController extends GUIController {
     				DatabaseManager.database.exportDatabaseToCSV(filePath);
     				progressLabel.setVisible(false);
     				Platform.runLater(() -> {
-    					showDialogLabel("Database export", "Successfully exported to:", filePath);    					
+    					showDialogLabel("Database export", "Successfully exported to:", filePath);
     				});
 
     			} catch(IOException e) {
@@ -139,10 +144,37 @@ public class OptionViewGUIController extends GUIController {
         thread.start();
 	}
 
+	private void importDatabase(String filePath) {
+		Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+    			progressbar.progressProperty().bind(CellDatabaseTable.importProgress);
+				progressText.textProperty().bind(CellDatabaseTable.importTextProgress);
+				progressHeadline.setText("Importing Database");
+				progressLabel.setVisible(true);
+				try {
+					DatabaseManager.database.importDatabase(filePath);
+					progressLabel.setVisible(false);
+					Platform.runLater(() -> {
+						showDialogLabel("Database import", "Successfully imported!", "");
+					});
+				} catch (IOException e) {
+					Platform.runLater(() -> {
+						progressLabel.setVisible(false);
+						showDialogLabel("Database import", e.getMessage(), "");
+					});
+				}
+            }
+        });
+        thread.setDaemon(true);
+        thread.start();
+	}
 	@Override
 	public void resetGUI() {
+		dialogLabel.setVisible(false);
 		progressLabel.setVisible(false);
 		dialogLabel.setVisible(false);
+		importDatabaseButton.setDisable(false);
 		exportDatabaseButton.setDisable(false);
 		resetDatabaseButton.setDisable(false);
 		if (!dialogButtonLabe.getChildren().contains(dialogCancleButton)) dialogButtonLabe.getChildren().add(dialogCancleButton);

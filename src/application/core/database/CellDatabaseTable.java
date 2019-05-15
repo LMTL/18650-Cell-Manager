@@ -1,6 +1,9 @@
 package application.core.database;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
@@ -21,7 +24,9 @@ public class CellDatabaseTable extends DatabaseTable {
 	public static int lastAddedCellID = 1;
 	public static String csvColumnTitles = "id;brand;type;capacity;testDate;packID";
 	public static SimpleDoubleProperty exportProgress = new SimpleDoubleProperty();
+	public static SimpleDoubleProperty importProgress = new SimpleDoubleProperty();
 	public static SimpleStringProperty exportTextProgress = new SimpleStringProperty();
+	public static SimpleStringProperty importTextProgress = new SimpleStringProperty();
 
 	public CellDatabaseTable(Connection connection, String name) {
 		super(connection, name);
@@ -31,25 +36,31 @@ public class CellDatabaseTable extends DatabaseTable {
 	protected void initTable() {
 		try {
 			Statement stat = connection.createStatement();
-			String cmd = "CREATE TABLE IF NOT EXISTS '" + TABLE_NAME + "' (" + "id INTEGER PRIMARY KEY, "
-					+ "brand 				TEXT, " + "type 				TEXT, " + "capacity				INTEGER, "
-					+ "testDate 			TEXT, " + "packID	 			INTEGER" + ")";
+			String cmd = "CREATE TABLE IF NOT EXISTS '" + TABLE_NAME + "' (" +
+						 "id 		INTEGER PRIMARY KEY, "	+
+						 "cellID 	INTEGER, " +
+						 "brand 	TEXT, " +
+						 "type 		TEXT, " +
+						 "capacity	INTEGER, " +
+						 "testDate 	TEXT, " +
+						 "packID	INTEGER" +
+						 ")";
 			stat.executeUpdate(cmd);
 
 		} catch (SQLException e) {
-			System.out.println("Could not initialize CellDatabaseTable. Errormessage:" + e.getMessage());
+			System.out.println("initTable: Could not initialize CellDatabaseTable. Errormessage:" + e.getMessage());
 			System.exit(0);
 		}
 		selectAll();
 	}
 
 	public int addCell(Cell c) {
-		SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
 		String dateString = "";
+
 		if (c.testDate != null)
-			dateString = ft.format(c.testDate);
-		String sql = "INSERT INTO '" + TABLE_NAME + "' (brand, type, capacity, testDate, packID) " + "VALUES ('"
-				+ c.brand + "', '" + c.type + "', " + c.capacity + ", '" + dateString + "', " + c.packID + ");";
+			dateString = Cell.cellDateFormater.format(c.testDate);
+			String sql = "INSERT INTO '" + TABLE_NAME + "' (cellID, brand, type, capacity, testDate, packID) " + "VALUES (" +
+				c.id + ", '" + c.brand + "', '" + c.type + "', " + c.capacity + ", '" + dateString + "', " + c.packID + ");";
 
 		try {
 			connection.setAutoCommit(false);
@@ -58,22 +69,20 @@ public class CellDatabaseTable extends DatabaseTable {
 			connection.commit();
 
 			ResultSet rs = stmt.getGeneratedKeys();
-
 			lastAddedCellID = rs.getInt(1);
-			System.out.println(lastAddedCellID);
 
 			stmt.close();
 
 			selectAll();
 			return lastAddedCellID;
 		} catch (SQLException e) {
-			System.out.println("Error while writing to database: " + e.getMessage());
+			System.out.println("addCell: Error while writing to database: " + e.getMessage());
 		}
 		return -1;
 	}
 
-	public void deleteCell(int id) {
-		String sql = "DELETE FROM '" + TABLE_NAME + "' WHERE id=" + id + ";";
+	public void deleteCell(int cellID) {
+		String sql = "DELETE FROM '" + TABLE_NAME + "' WHERE id=" + cellID + ";";
 
 		try {
 			connection.setAutoCommit(false);
@@ -83,30 +92,30 @@ public class CellDatabaseTable extends DatabaseTable {
 			stmt.close();
 			selectAll();
 		} catch (SQLException e) {
-			System.out.println("Error while writing to database: " + e.getMessage());
+			System.out.println("deleteCell:Error while writing to database: " + e.getMessage());
 		}
 	}
 
 	public void selectAll() {
-		String sql = "SELECT id, brand, type, capacity, testDate, packID FROM '" + TABLE_NAME + "'";
+		String sql = "SELECT id, cellID, brand, type, capacity, testDate, packID FROM '" + TABLE_NAME + "'";
 		try {
 			DatabaseManager.cellList.clear();
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
-			SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
-
+			int cellID = -1;
 			while (rs.next()) {
 				Date date = null;
-				if (!rs.getString("testDate").equals(""))
-					date = ft.parse(rs.getString("testDate"));
-				DatabaseManager.cellList.add(new Cell(rs.getString("brand"), rs.getString("type"), rs.getInt("id"),
-						rs.getInt("capacity"), rs.getInt("packID"), date));
+				if (!rs.getString("testDate").equals("")) date = Cell.cellDateFormater.parse(rs.getString("testDate"));
+				cellID = rs.getInt("cellID");
+				if (cellID < 0) cellID = rs.getInt("id");
+
+				DatabaseManager.cellList.add(new Cell(rs.getString("brand"), rs.getString("type"), cellID, rs.getInt("capacity"), rs.getInt("packID"), date));
 			}
 
 			if (MainScene.databaseView != null)
 				MainScene.databaseView.getGUIController().resetGUI();
 		} catch (SQLException e) {
-			System.out.println("Error while writing to database: " + e.getMessage());
+			System.out.println("selectAll: selectAllselectAllError while writing to database: " + e.getMessage());
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -118,9 +127,8 @@ public class CellDatabaseTable extends DatabaseTable {
 			Statement stat = connection.createStatement();
 			String cmd = "DROP TABLE IF EXISTS '" + TABLE_NAME + "'";
 			stat.executeUpdate(cmd);
-
 		} catch (SQLException e) {
-			System.out.println("Could not reset CellDatabaseTable. Errormessage:" + e.getMessage());
+			System.out.println("resetDatabase: Could not reset CellDatabaseTable. Errormessage:" + e.getMessage());
 			System.exit(0);
 		}
 		initTable();
@@ -139,19 +147,71 @@ public class CellDatabaseTable extends DatabaseTable {
 		for (Cell c : DatabaseManager.cellList) {
 			bw.write(c.toCSV());
 			bw.newLine();
-
 			counter++;
 
-			try {
-				Thread.sleep(5);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 			exportProgress.set(counter / cellInDatabase);
 			exportTextProgress.set(((int) counter) + " / " + ((int) cellInDatabase));
 		}
 
-		if (bw != null) bw.close();
+		if (bw != null)
+			bw.close();
+	}
+
+	public void importDatabase(String filePath) throws IOException {
+		resetDatabase();
+		double lineCounter = getLines(filePath), currentLine = 1;
+		String line = null;
+		String[] headline = null, cellData;
+
+		BufferedReader br = null;
+
+		importProgress.set(0.0);
+		importTextProgress.set("");
+
+		br = new BufferedReader(new FileReader(filePath));
+		headline = br.readLine().split(";");
+
+		if (headline == null || headline.length != 6 ||
+			!headline[0].toLowerCase().equals("id") ||
+			!headline[1].toLowerCase().equals("brand") ||
+			!headline[2].toLowerCase().equals("type") ||
+			!headline[3].toLowerCase().equals("capacity") ||
+			!headline[4].toLowerCase().equals("testdate") ||
+			!headline[5].toLowerCase().equals("packid")
+			) {
+			br.close();
+			throw new IOException("File does not seem to be a valid Databasefile.");
+		}
+		//String brand, String type, int id, int capacity, int packID, Date date
+		while((line = br.readLine()) != null) {
+			Date date = null;
+			importProgress.set(currentLine / lineCounter);
+			importTextProgress.set(((int) currentLine) + " / " + ((int) lineCounter));
+			cellData = line.split(";");
+			if (!cellData[4].equals("-1")) {
+				try { date = Cell.cellDateFormater.parse(cellData[4]); }
+				catch (ParseException e) { date = null; }
+			}
+
+			if (date != null) {
+				addCell(new Cell(cellData[1], cellData[2], Integer.valueOf(cellData[0]), Integer.valueOf(cellData[3]), Integer.valueOf(cellData[5]), date));
+			}
+			else {
+				addCell(new Cell(cellData[1], cellData[2], Integer.valueOf(cellData[0]), Integer.valueOf(cellData[3]), Integer.valueOf(cellData[5]), null));
+			}
+			//date = null;
+			currentLine++;
+		}
+		br.close();
+	}
+
+	private double getLines(String filePath) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(filePath));
+		double lineCounter = 0;
+
+		while(br.readLine() != null) lineCounter++;
+		br.close();
+
+		return lineCounter;
 	}
 }
